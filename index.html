@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java prac</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        .container {
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+
+        }
+
+        .container input {
+            font-size: 23px;
+            height: 100px;
+            width: 100%;
+        }
+
+        .container button {
+            height: 70px;
+            width: 100px;
+        }
+
+        .heading {
+            color: white;
+            font-size: 34px;
+        }
+
+        @media (max-width:410px) {
+            .container input {
+               font-size: 18px;
+                height: 70px;
+            }
+            .container button {
+            width: 67px;
+        }
+                
+        }
+        @media (max-width:750px) {
+            .container input {
+               font-size: 18px;
+                height: 120px;
+            }
+            .container button {
+            width: 89px;
+            height: 100px;
+            font-size: 18px;
+        }
+                
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Diagonostic Calculator</h1>
+    <div class="container">
+        <input type="text" id="screen" Name="screen">
+        <table>
+            <tr>
+                <td><button>X-ray</button></td>
+                <td><button>Usg</button></td>
+                <td><button>E.C.G</button></td>
+                <td><button>C</button></td>
+            </tr>
+            <tr>
+                <td><button>R.B.S</button></td>
+                <td><button>Widal Test</button></td>
+                <td><button>Hbs Ag</button></td>
+                <td><button>+</button></td>
+            </tr>
+            <tr>
+                <td><button>Pregnancy</button></td>
+                <td><button>R.B.S 2nd</button></td>
+                <td><button>Urine for R/E</button></td>
+                <td><button>=</button></td>
+            </tr>
+            <tr>
+                <td><button>Blood Group</button></td>
+                <td><button>R.B.S 2nd</button></td>
+                <td><button>ABS</button></td>
+                <td><button>GHJ</button></td>
+            </tr>
+        </table>
+        <!-- (text)=>{
+    let buttonText = text.target.innerText; -->
+    </div>
+
+    <script>
+        let screen = document.getElementById('screen');
+        let buttons = document.querySelectorAll("button");
+        let screenValue = "";
+        for (element of buttons) {
+            element.addEventListener('click', (textValue) => {
+                let buttonText = textValue.target.innerText
+                console.log(buttonText)
+                if (buttonText == "X-ray") {
+                    buttonText = 400;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+                else if (buttonText == "Usg") {
+                    buttonText = 700;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+                else if (buttonText == "Blood Group") {
+                    buttonText = 100;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+                else if (buttonText == "R.B.S") {
+                    buttonText = 100;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+                else if (buttonText == "Urine for R/E") {
+                    buttonText = 100;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+                else if (buttonText == "Widal Test") {
+                    buttonText = 300;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+                else if (buttonText == "Hbs Ag") {
+                    buttonText = 300;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+                else if (buttonText == "E.C.G") {
+                    buttonText = 300;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+
+
+                else if (buttonText == "Pregnancy") {
+                    buttonText = 150;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+                else if (buttonText == "R.B.S 2nd") {
+                    buttonText = 200;
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+                else if (buttonText == '=') {
+                    screen.value = eval(screenValue)
+
+                }
+                else if (buttonText == "C") {
+                    screenValue = "";
+                    screen.value = screenValue;
+                }
+                else {
+                    screenValue += buttonText;
+                    screen.value = screenValue;
+                }
+
+
+
+
+
+            })
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
